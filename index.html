@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="东莞市木立家具有限公司专业从事高端定制家具制造与销售，提供全屋定制、整木定制、智能家居等一体化解决方案。">
+    <meta name="keywords" content="东莞家具,定制家具,全屋定制,木立家具,高端家具,整木定制">
+    <title>木立家具 - 高端定制家具品牌 | 东莞市木立家具有限公司</title>
+    <style>
+        :root {
+            --primary: #2C1810;
+            --secondary: #8B5A2B;
+            --accent: #D4A574;
+            --gold: #C9A96E;
+            --light: #FAF6F1;
+            --dark: #1A1A1A;
+            --text: #333333;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--light);
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Hero区域 */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(44,24,16,0.9), rgba(44,24,16,0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wood" width="20" height="20" patternUnits="userSpaceOnUse"><rect fill="%238B5A2B" width="20" height="20"/><path d="M0 10 Q5 8 10 10 T20 10" stroke="%23704221" fill="none" stroke-width="0.5"/></pattern></defs><rect fill="url(%23wood)" width="100" height="100"/></svg>');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            letter-spacing: 8px;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 36px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #D4B87E;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* 统计数据 */
+        .stats {
+            background: white;
+            padding: 3rem 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* 关于我们 */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(139,90,43,0.1);
+            color: var(--secondary);
+            font-size: 0.85rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+        }
+
+        .about-image-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: var(--gold);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* 服务项目 */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 产品展示 */
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            position: relative;
+            height: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product-bg {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-bg {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+        }
+
+        .product-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-overlay span {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* 流程 */
+        .process {
+            background: var(--primary);
+            color: white;
+        }
+
+        .process .section-title {
+            color: white;
+        }
+
+        .process .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .process-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-item::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 30px;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .process-item:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .process-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* 优势 */
+        .advantages {
+            background: white;
+        }
+
+        .advantages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .advantage-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .advantage-item:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .advantage-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .advantage-content h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .advantage-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 联系 */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-text h5 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-container,
+            .contact-container,
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-item::after {
+                display: none;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">木</div>
+                <span class="logo-text">木立家具</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">服务项目</a></li>
+                <li><a href="#products">产品展示</a></li>
+                <li><a href="#process">定制流程</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            <div class="nav-phone">
+                <span>📞</span>
+                <span>预约咨询</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">高端定制 · 品质生活</div>
+            <h1>
+                匠心工艺<br>
+                <span>定制专属您的家居空间</span>
+            </h1>
+            <p class="hero-desc">
+                东莞市木立家具有限公司，专注于高端定制家具制造，为您打造个性化、品质化的家居生活体验
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">立即预约</a>
+                <a href="#products" class="btn btn-outline">浏览案例</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">200万</div>
+                <div class="stat-label">注册资本</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2023</div>
+                <div class="stat-label">成立年份</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">东莞</div>
+                <div class="stat-label">公司所在地</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">客户满意度</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="section">
+        <div class="section-header">
+            <span class="section-tag">ABOUT US</span>
+            <h2 class="section-title">关于木立家具</h2>
+            <p class="section-subtitle">以匠心铸品质，以服务赢信赖</p>
+        </div>
+        <div class="about-container">
+            <div class="about-image">
+                <div class="about-image-main">🏠</div>
+                <div class="about-image-accent">木</div>
+            </div>
+            <div class="about-content">
+                <h3>品质家具，源于专注</h3>
+                <p>
+                    东莞市木立家具有限公司成立于2023年，坐落于制造业重镇——东莞市。公司专注于高端定制家具的研发、制造与销售，致力于为客户打造独一无二的家居空间。
+                </p>
+                <p>
+                    我们拥有完善的生产体系和专业团队，从设计到安装，为客户提供一站式定制家具解决方案。产品涵盖全屋定制、整木定制、衣柜、橱柜、书房、卧室等全品类家具。
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <span>原创设计</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <span>精工品质</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <span>量身定制</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✦</div>
+                        <span>售后无忧</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section id="services" class="section services">
+        <div class="section-header">
+            <span class="section-tag">SERVICES</span>
+            <h2 class="section-title">服务项目</h2>
+            <p class="section-subtitle">全方位满足您的家具定制需求</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🛋️</div>
+                <h3>全屋定制</h3>
+                <p>根据房屋结构和个人喜好，提供整体家居定制方案，实现空间利用最大化</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚪</div>
+                <h3>整木定制</h3>
+                <p>采用优质原木材料，打造自然环保的整木家居，彰显品质与格调</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🗄️</div>
+                <h3>衣柜橱柜</h3>
+                <p>个性化收纳解决方案，兼顾实用性与美观度，让收纳井然有序</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>书房定制</h3>
+                <p>打造专属阅读空间，书柜、书桌一体化设计，营造沉浸式学习氛围</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛏️</div>
+                <h3>卧室家具</h3>
+                <p>床、床头柜、梳妆台等卧室配套家具，营造舒适温馨的休憩空间</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>装修服务</h3>
+                <p>提供住宅室内装饰装修服务，实现设计、生产、安装一体化</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products" class="section">
+        <div class="section-header">
+            <span class="section-tag">PRODUCTS</span>
+            <h2 class="section-title">精选案例</h2>
+            <p class="section-subtitle">每一件作品，都是对品质的承诺</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-bg">🛋️</div>
+                <div class="product-overlay">
+                    <h4>现代简约客厅</h4>
+                    <span>极简设计 · 品质生活</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-bg">🛏️</div>
+                <div class="product-overlay">
+                    <h4>轻奢卧室</h4>
+                    <span>舒适优雅 · 定制睡眠</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-bg">🍳</div>
+                <div class="product-overlay">
+                    <h4>开放式厨房</h4>
+                    <span>功能美学 · 烹饪时光</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-bg">📖</div>
+                <div class="product-overlay">
+                    <h4>定制书房</h4>
+                    <span>静谧空间 · 书香门第</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 定制流程 -->
+    <section id="process" class="section process">
+        <div class="section-header">
+            <span class="section-tag">PROCESS</span>
+            <h2 class="section-title">定制流程</h2>
+            <p class="section-subtitle">简单六步，开启您的定制之旅</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-item">
+                <div class="process-number">1</div>
+                <h4>在线咨询</h4>
+                <p>通过电话或线上沟通，初步了解您的需求</p>
+            </div>
+            <div class="process-item">
+                <div class="process-number">2</div>
+                <h4>上门量尺</h4>
+                <p>专业人员上门测量，确保尺寸精准</p>
+            </div>
+            <div class="process-item">
+                <div class="process-number">3</div>
+                <h4>设计方案</h4>
+                <p>根据需求和空间，量身定制最佳方案</p>
+            </div>
+            <div class="process-item">
+                <div class="process-number">4</div>
+                <h4>确认报价</h4>
+                <p>透明报价，无隐形消费</p>
+            </div>
+        </div>
+        <div class="process-grid" style="margin-top: 2rem;">
+            <div class="process-item">
+                <div class="process-number">5</div>
+                <h4>生产制作</h4>
+                <p>精细化生产，严格把控品质</p>
+            </div>
+            <div class="process-item">
+                <div class="process-number">6</div>
+                <h4>配送安装</h4>
+                <p>专业团队送货上门并安装</p>
+            </div>
+            <div class="process-item">
+                <div class="process-number">7</div>
+                <h4>售后服务</h4>
+                <p>长期维护，终身质保</p>
+            </div>
+            <div class="process-item">
+                <div class="process-number">8</div>
+                <h4>满意交付</h4>
+                <p>客户验收，满意交付</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的优势 -->
+    <section class="section advantages">
+        <div class="section-header">
+            <span class="section-tag">ADVANTAGES</span>
+            <h2 class="section-title">我们的优势</h2>
+            <p class="section-subtitle">选择木立，选择品质与放心</p>
+        </div>
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon">🎨</div>
+                <div class="advantage-content">
+                    <h4>个性化设计</h4>
+                    <p>专业设计团队，根据您的喜好和房屋结构，量身定制专属方案，让每一处细节都体现个性品味。</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🌲</div>
+                <div class="advantage-content">
+                    <h4>优质原材料</h4>
+                    <p>精选优质实木和环保板材，严格把控材料质量，确保产品环保耐用，守护家人健康。</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🔧</div>
+                <div class="advantage-content">
+                    <h4>精湛工艺</h4>
+                    <p>多年行业经验的老师傅精细制作，每一道工序都精益求精，保证产品品质卓越。</p>
+                </div>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🛡️</div>
+                <div class="advantage-content">
+                    <h4>完善售后</h4>
+                    <p>提供长期的售后服务和终身质保，让您在购买后无后顾之忧，享受品质生活。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section contact">
+        <div class="section-header">
+            <span class="section-tag">CONTACT</span>
+            <h2 class="section-title">联系我们</h2>
+            <p class="section-subtitle">期待为您打造梦想家居</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>联系方式</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        <h5>公司地址</h5>
+                        <p>广东省东莞市茶山镇寒溪水甲塘路26号2栋703室</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🏢</div>
+                    <div class="contact-text">
+                        <h5>公司名称</h5>
+                        <p>东莞市木立家具有限公司</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📋</div>
+                    <div class="contact-text">
+                        <h5>统一社会信用代码</h5>
+                        <p>91441900MAC7EP9X7J</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-text">
+                        <h5>营业时间</h5>
+                        <p>周一至周日 9:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>在线预约</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>您的姓名</label>
+                            <input type="text" name="name" placeholder="请输入姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label>联系电话</label>
+                            <input type="tel" name="phone" placeholder="请输入手机号" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>房屋类型</label>
+                        <input type="text" name="type" placeholder="如：平层/复式/别墅">
+                    </div>
+                    <div class="form-group">
+                        <label>定制需求</label>
+                        <textarea name="message" placeholder="请描述您的定制需求..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">提交预约</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>木立家具</h3>
+                    <p>东莞市木立家具有限公司，专注于高端定制家具制造，为您打造个性化、品质化的家居生活体验。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#products">产品展示</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">全屋定制</a></li>
+                        <li><a href="#">整木定制</a></li>
+                        <li><a href="#">衣柜橱柜</a></li>
+                        <li><a href="#">书房定制</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>📍 东莞市茶山镇</li>
+                        <li>🏢 木立家具</li>
+                        <li>📋 91441900</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 东莞市木立家具有限公司 版权所有</span>
+                <span>高端定制家具 · 品质生活选择</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 表单提交
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            console.log('预约信息:', data);
+            alert('感谢您的预约！我们将尽快与您联系。');
+            this.reset();
+        });
+
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .product-card, .advantage-item, .process-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
